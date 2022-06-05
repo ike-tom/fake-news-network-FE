@@ -35,6 +35,9 @@
       color: white;
       padding: 1.5rem;
       width: 80%;
+      @media screen and (max-width: 375px) {
+        font-size: 1.1rem;
+      }
     }
   }
 }

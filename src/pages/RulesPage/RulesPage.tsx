@@ -7,8 +7,8 @@ export function RulesPage() {
       <Navbar />
       <div className={styles.rulesDescriptionContainer}>
         <p className={styles.rulesDescription}>
-          Masz 10 pytań z różnych kategorii. Odpowiedz na jak najwięcej z nich i
-          znajdź się wśród najlepszych.
+          Na początek wybierz kategorię z której chcesz się sprawdzić. Masz 10 pytań. Odpowiedz na jak najwięcej z nich i
+          znajdź się wśród najlepszych. Dowiedz się na jaką kategorię fake newsów musisz zwrócić szczególną uwagę.
         </p>
       </div>
     </div>

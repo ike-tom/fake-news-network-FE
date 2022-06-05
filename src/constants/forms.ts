@@ -1,4 +1,7 @@
-export const CATEGORIES = ["CodersCamp", "Wiadomości"] as [
+export const CATEGORIES = [
+  "Polityka",
+  "Społeczeństwo",
+  "Technologia",
+  "Zdrowie",
   "CodersCamp",
-  "Wiadomości"
-];
+] as ["Polityka", "Społeczeństwo", "Technologia", "Zdrowie", "CodersCamp"];
