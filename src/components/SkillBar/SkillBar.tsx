@@ -1,15 +1,10 @@
-//  @ts-nocheck
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
+import { GameModeContext } from "../../App";
 import styles from "./SkillBar.module.scss";
 
-export function SkillBar({
-  category,
-  level,
-}: {
-  category: string;
-  level: number;
-}) {
-  const skillBar = useRef(null);
+export function SkillBar({ level }: { level: number }) {
+  const skillBar = useRef<HTMLDivElement>(null);
+  const game = useContext(GameModeContext);
 
   function changeSkillBarColor() {
     if (skillBar && skillBar.current) {
@@ -27,7 +22,7 @@ export function SkillBar({
 
   const showResult = () => {
     if (level < 50) {
-      return "Wracaj na kurs!";
+      return "Musisz się jeszcze sporo nauczyć.";
     } else if (level < 80) {
       return "Jesteś dobry w rozpoznawaniu fake newsów!";
     } else return "Świetnie radzisz sobie z rozpoznawaniem fake newsów!";
@@ -39,11 +34,11 @@ export function SkillBar({
 
   return (
     <div className={styles.skillBar}>
-      <div className={styles.skillBarName}>{category.toUpperCase()}</div>
+      <div className={styles.skillBarName}>{game.gameMode.toUpperCase()}</div>
       <div ref={skillBar} className={styles.skillBarLevel}>
         {level + "%"}
       </div>
-      <h2>{showResult()}</h2>
+      <h2 className={styles.resultDescription}>{showResult()}</h2>
     </div>
   );
 }
