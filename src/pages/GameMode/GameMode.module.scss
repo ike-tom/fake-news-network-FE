@@ -1,0 +1,59 @@
+@import "../../theme.module.scss";
+
+.GameView {
+  color: var(--text-color-main);
+
+  .GameViewContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .gameViewLink {
+      text-decoration: none;
+    }
+  }
+  .GameViewHeader {
+    margin-bottom: 3rem;
+    @media screen and (max-width: 768px) {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+  }
+  .GameViewButton {
+    width: 300px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color-main);
+    cursor: pointer;
+    margin: 20px;
+    padding: 1rem;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    transition: all 0.4s ease-in-out;
+    background-image: linear-gradient(
+      to right,
+      var(--bg-color-gradient-one),
+      var(--bg-color-gradient-two)
+    );
+
+    &:hover {
+      background-position: 100% 0;
+      box-shadow: 0 6px 20px 0 rgba(49, 196, 190, 0.75);
+      transition: all 0.4s ease-in-out;
+    }
+    &:focus {
+      outline: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 200px;
+      font-size: 1rem;
+      margin: 0.6rem;
+    }
+  }
+}
