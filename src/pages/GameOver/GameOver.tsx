@@ -1,18 +1,21 @@
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { useApiSend } from "../../hooks/useApi";
 import { SCORES_ENDPOINT } from "../../urls/api";
 import styles from "./GameOver.module.scss";
 import { SkillBar } from "../../components/SkillBar/SkillBar";
+import { GameModeContext } from "../../App";
+import { TOP_SCORES_PAGE } from "../../urls/frontend";
 
 interface GameOverProps {
   score: number;
 }
 
-function GameOver({ score }: GameOverProps) {
+export function GameOver({ score }: GameOverProps) {
+  const game = useContext(GameModeContext);
   const [name, setName] = useState<string>("");
-  const [disabled, setDiseabled] = useState<boolean>(true);
+  const [disabled, setDisabled] = useState<boolean>(true);
 
   const navigate = useNavigate();
 
@@ -20,18 +23,20 @@ function GameOver({ score }: GameOverProps) {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setDiseabled(true);
+    setDisabled(true);
     setName("");
 
     const payload = {
       username: name,
+      category: game.gameMode,
       score: score,
     };
+
     apiSend({ path: SCORES_ENDPOINT, data: payload });
   };
 
   useEffect(() => {
-    isSuccess && navigate("/top_scores");
+    isSuccess && navigate(TOP_SCORES_PAGE);
   }, [navigate, isSuccess]);
 
   return (
@@ -46,12 +51,12 @@ function GameOver({ score }: GameOverProps) {
             target="_blank"
             rel="noreferrer"
           >
-            Rozpoznawanie nieprawdziwych informacji
+            Kliknij tutaj i naucz się rozpoznawać nieprawdziwe informacje
           </a>
         </p>
 
         <div>
-          <SkillBar category="CodersCamp" level={(score / 10) * 100} />
+          <SkillBar level={(score / 10) * 100} />
         </div>
 
         <form className={styles.form} onSubmit={handleSubmit}>
@@ -64,7 +69,7 @@ function GameOver({ score }: GameOverProps) {
             id="name"
             value={name}
             onChange={(event) => {
-              setDiseabled(false);
+              setDisabled(false);
               setName(event.target.value);
             }}
           />
@@ -81,5 +86,3 @@ function GameOver({ score }: GameOverProps) {
     </div>
   );
 }
-
-export default GameOver;

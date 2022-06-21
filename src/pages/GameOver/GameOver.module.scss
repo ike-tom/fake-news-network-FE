@@ -1,165 +1,172 @@
 .GameOver {
-    background: linear-gradient(45deg, rgba(37, 195, 205, 1) 0%, rgba(12, 149, 226, 0.79) 50%, rgba(0, 49, 250, 1) 100%);
-    color: #fff;
-    height: 100vh;
-    overflow: hidden;
+  background: linear-gradient(
+    45deg,
+    rgba(37, 195, 205, 1) 0%,
+    rgba(12, 149, 226, 0.79) 50%,
+    rgba(0, 49, 250, 1) 100%
+  );
+  color: var(--text-color-main);
+  height: 100vh;
+  overflow: hidden;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    .squereScore {
-        width: 65rem;
-        height: fit-content;
-        background: linear-gradient(225deg, rgba(253, 253, 253, 0.5) 0%, rgba(253, 253, 253, 0.42) 45%, rgba(253, 253, 253, 0.28) 100%);
-        margin: auto;
-        border-radius: 2rem;
-        box-shadow: 4px 4px 4px var(--glass-shadow-color);
-    }
+  .squereScore {
+    width: 65rem;
+    height: fit-content;
+    background: linear-gradient(
+      225deg,
+      rgba(253, 253, 253, 0.5) 0%,
+      rgba(253, 253, 253, 0.42) 45%,
+      rgba(253, 253, 253, 0.28) 100%
+    );
+    margin: auto;
+    border-radius: 2rem;
+    box-shadow: 4px 4px 4px var(--glass-shadow-color);
+  }
 
-    .title {
-        font-size: 2rem;
-        text-align: center;
-        font-weight: bold;
-        padding-top: 3rem;
-    }
+  .title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 3rem;
+  }
 
-    .link {
-        text-align: center;
-        font-weight: bold;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        a{
-            text-decoration: none;
-            color: inherit;
-        }
+  .link {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
+  }
 
-    .form {
-        width: 20rem;
-        margin: 0 auto;
-        margin-top: 2rem;
-    }
+  .form {
+    width: 20rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
 
-    .label {
-        font-size: 1.2rem;
-        font-weight: bold;
-    }
-    
-    .input {
-        width: 90%;
-        height: 2rem;
-        margin-bottom: 1.2rem;
-        font-size: 1.2rem;
-        margin-top: 0.5rem;
-    }
+  .label {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
 
-    .button {
-        padding: 0.5rem;
-        border-radius: 0.4rem;
-        cursor: pointer;
-        margin-bottom: 1rem;
-    }
+  .input {
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+
+  .button {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
 }
 
 @media screen and (min-width: 320px) {
-    .GameOver {
-        .squereScore {
-            width: 19rem;
-        }
-
-        .title {
-            font-size: 1rem;
-            padding-top: 2rem;
-        }
-
-        .link {
-            padding-top: 2.5rem;
-        }
-
-        .form {
-            width: 12rem;
-            margin-top: 2rem;
-        }
-
-        .label {
-            font-size: 1rem;
-        }
-
-        .input {
-            width: 100%;
-            height: 1.2rem;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .button {
-            padding: 0.3rem;
-        }
+  .GameOver {
+    .squereScore {
+      width: 19rem;
     }
+
+    .title {
+      font-size: 1rem;
+      padding-top: 2rem;
+    }
+
+    .link {
+      padding-top: 2.5rem;
+    }
+
+    .form {
+      width: 12rem;
+      margin-top: 2rem;
+    }
+
+    .label {
+      font-size: 1rem;
+    }
+
+    .input {
+      width: 100%;
+      height: 1.2rem;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .button {
+      padding: 0.3rem;
+    }
+  }
 }
 
 @media screen and (min-width: 480px) {
-    .GameOver {
-
-        .squereScore {
-            width: 29rem;
-        }
-
-        .title {
-            font-size: 2rem;
-            padding-top: 3rem;
-        }
-
-        .link {
-            padding-top: 4rem;
-        }
-
-        .form {
-            width: 20rem;
-            margin-top: 4rem;
-        }
-
-        .label {
-            font-size: 1.2rem;
-        }
-
-        .input {
-            width: 90%;
-            height: 2rem;
-            margin-bottom: 1.2rem;
-            font-size: 1.2rem;
-        }
-
-        .button {
-            padding: 0.5rem;
-            border-radius: 0.4rem;
-        }
+  .GameOver {
+    .squereScore {
+      width: 29rem;
     }
+
+    .title {
+      font-size: 2rem;
+      padding-top: 3rem;
+    }
+
+    .link {
+      padding-top: 4rem;
+    }
+
+    .form {
+      width: 20rem;
+      margin-top: 4rem;
+    }
+
+    .label {
+      font-size: 1.2rem;
+    }
+
+    .input {
+      width: 100%;
+      height: 2rem;
+      margin-bottom: 1.2rem;
+      font-size: 1.2rem;
+    }
+
+    .button {
+      padding: 0.5rem;
+      border-radius: 0.4rem;
+    }
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .GameOver {
-
-        .squereScore {
-            width: 45rem;
-        }
+  .GameOver {
+    .squereScore {
+      width: 45rem;
     }
+  }
 }
 
 @media screen and (min-width: 992px) {
-    .GameOver {
-
-        .squereScore {
-            width: 55rem;
-        }
+  .GameOver {
+    .squereScore {
+      width: 55rem;
     }
+  }
 }
 
 @media screen and (min-width: 1200px) {
-    .GameOver {
-
-        .squereScore {
-            width: 65rem;
-        }
+  .GameOver {
+    .squereScore {
+      width: 65rem;
     }
+  }
 }
