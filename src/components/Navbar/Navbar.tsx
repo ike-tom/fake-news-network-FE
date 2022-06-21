@@ -1,13 +1,13 @@
 import { useState } from "react";
-
 import { Link } from "react-router-dom";
-import { NEW_QUESTION_PAGE } from "../../urls/frontend";
+import {
+  GAME_MODE_PAGE,
+  NEW_QUESTION_PAGE,
+  RULES_PAGE,
+  TOP_SCORES_PAGE,
+} from "../../urls/frontend";
 
 import styles from "./Navbar.module.scss";
-
-function refreshPage() {
-  window.location.reload();
-}
 
 export function Navbar() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
@@ -30,13 +30,13 @@ export function Navbar() {
             : styles.navLinksContainer
         }
       >
-        <a className={styles.navLinks} href="/quiz">
+        <a className={styles.navLinks} href={GAME_MODE_PAGE}>
           Graj
         </a>
-        <Link className={styles.navLinks} to="/rules">
+        <Link className={styles.navLinks} to={RULES_PAGE}>
           Zasady
         </Link>
-        <Link className={styles.navLinks} to="/top_scores">
+        <Link className={styles.navLinks} to={TOP_SCORES_PAGE}>
           Najlepsze wyniki
         </Link>
         <Link className={styles.navLinks} to={NEW_QUESTION_PAGE}>
