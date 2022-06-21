@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 const data = (
   <div className={styles.homepageText}>
-    <h2>Czym jest dezinformacja</h2>
+    <h2>Czym jest dezinformacja?</h2>
     <br />
     <br />
     <p>
