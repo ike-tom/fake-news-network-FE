@@ -3,28 +3,36 @@
 .GameView {
   color: var(--text-color-main);
 
-  .title {
-    font-size: 2.5rem;
-    padding-top: 3rem;
+  .questionWrapper {
     text-align: center;
-    margin-bottom: 2.5rem;
-  }
 
-  .information {
-    text-align: center;
-    padding: 0 200px;
-    margin: 0 auto;
-    font-weight: bold;
-    font-size: 1.2rem;
-    line-height: 2rem;
-    margin-bottom: 2rem;
-  }
+    .title {
+      font-size: 2.5rem;
+      padding-top: 3rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
 
-  .note {
-    text-align: center;
-    font-size: 1rem;
-    font-weight: bold;
-    letter-spacing: 0.1rem;
+    .information {
+      text-align: center;
+      padding: 0 200px;
+      margin: 0 auto;
+      font-weight: bold;
+      font-size: 1.2rem;
+      line-height: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+      color: var(--text-color-main);
+      margin: 0 auto;
+      font-family: "Roboto", sans-serif;
+      text-shadow: 2px 2px 0px var(--glass-shadow-color);
+    }
   }
 
   .buttons {
@@ -80,22 +88,24 @@
 
 @media screen and (min-width: 320px) {
   .GameView {
-    .title {
-      font-size: 1.5rem;
-      padding-top: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
+    .questionWrapper {
+      .title {
+        font-size: 1.5rem;
+        padding-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
 
-    .information {
-      padding: 0 10px;
-      font-size: 1rem;
-      line-height: 1rem;
-      margin-bottom: 1rem;
-    }
+      .information {
+        padding: 0 10px;
+        font-size: 1rem;
+        line-height: 1rem;
+        margin-bottom: 1rem;
+      }
 
-    .note {
-      font-size: 1rem;
-      letter-spacing: 0rem;
+      .note {
+        font-size: 1rem;
+        letter-spacing: 0rem;
+      }
     }
 
     .buttons {
@@ -121,20 +131,22 @@
 
 @media screen and (min-width: 480px) {
   .GameView {
-    .title {
-      font-size: 1.8rem;
-      padding-top: 1.8rem;
-      margin-bottom: 1.8rem;
-    }
+    .questionWrapper {
+      .title {
+        font-size: 1.8rem;
+        padding-top: 1.8rem;
+        margin-bottom: 1.8rem;
+      }
 
-    .information {
-      padding: 0 50px;
-      line-height: 1.1rem;
-      margin-bottom: 2rem;
-    }
+      .information {
+        padding: 0 50px;
+        line-height: 1.1rem;
+        margin-bottom: 2rem;
+      }
 
-    .note {
-      font-size: 1.2rem;
+      .note {
+        font-size: 1.2rem;
+      }
     }
 
     .buttons {
@@ -160,21 +172,23 @@
 
 @media screen and (min-width: 768px) {
   .GameView {
-    .title {
-      font-size: 2.5rem;
-      padding-top: 3rem;
-      margin-bottom: 2.5rem;
-    }
+    .questionWrapper {
+      .title {
+        font-size: 2.5rem;
+        padding-top: 3rem;
+        margin-bottom: 2.5rem;
+      }
 
-    .information {
-      padding: 0 100px;
-      font-size: 1.2rem;
-      line-height: 1.2rem;
-    }
+      .information {
+        padding: 0 100px;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+      }
 
-    .note {
-      font-size: 1rem;
-      letter-spacing: 0.1rem;
+      .note {
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+      }
     }
 
     .buttons {
