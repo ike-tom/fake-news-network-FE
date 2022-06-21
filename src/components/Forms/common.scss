@@ -1,12 +1,8 @@
 .form-field--basic {
   padding: 0.8rem;
-  border: solid 1px black;
+  border: solid 1px var(--text-color-dark);
   border-radius: 8px;
   width: 100%;
   font-size: 1rem;
   outline: none;
-
-  &.validationError {
-    //   border: solid 1px $danger;
-  }
 }
