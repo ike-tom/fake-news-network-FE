@@ -4,6 +4,7 @@ import { Navbar } from "../../components/Navbar/Navbar";
 import { Button, Container, Typography } from "@mui/material";
 import { GameModeContext } from "../../App";
 import { Link } from "react-router-dom";
+import { QUIZ_PAGE } from "../../urls/frontend";
 
 export function GameMode() {
   const game = useContext(GameModeContext);
@@ -28,7 +29,7 @@ export function GameMode() {
           Wybierz kategorię:
         </Typography>
         {gameModes.map((gameMode, index) => (
-          <Link key={index} className={styles.gameViewLink} to="/quiz">
+          <Link key={index} className={styles.gameViewLink} to={QUIZ_PAGE}>
             <Button
               key={index}
               className={styles.GameViewButton}
