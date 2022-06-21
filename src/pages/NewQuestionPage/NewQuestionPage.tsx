@@ -21,7 +21,7 @@ interface NewQuestionData {
   link: string;
 }
 
-const NewQuestionPage = () => {
+export const NewQuestionPage = () => {
   const methods = useForm<NewQuestionData>({
     resolver: yupResolver(NewQuestionValidation),
     mode: "onTouched",
@@ -41,7 +41,7 @@ const NewQuestionPage = () => {
     const payload = { ...data, answers };
 
     apiSend({ path: CREATE_QUESTION_ENDPOINT, data: payload });
-    reset()
+    reset();
   }
 
   const data = (
@@ -86,5 +86,3 @@ const NewQuestionPage = () => {
     </>
   );
 };
-
-export default NewQuestionPage;
