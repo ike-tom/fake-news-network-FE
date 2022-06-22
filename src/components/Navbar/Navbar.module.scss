@@ -30,6 +30,9 @@
     text-shadow: 2px 2px 0px var(--glass-shadow-color);
     cursor: pointer;
     margin: 2rem;
+    @media(orientation: landscape) and (max-width: 944px) {
+      margin: .5rem;
+    }
   }
 
   .navLinks:hover {

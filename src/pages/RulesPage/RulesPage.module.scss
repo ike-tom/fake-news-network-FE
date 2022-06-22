@@ -28,6 +28,9 @@
     @media screen and (max-width: 768px) {
       width: 80%;
     }
+    @media(orientation: landscape) and (max-width: 944px) {
+      width: 90%;
+    }
 
     .rulesDescription {
       font-size: 1.5rem;
