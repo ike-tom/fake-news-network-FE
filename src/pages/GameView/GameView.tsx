@@ -55,25 +55,41 @@ export function GameView({
     setQuestId(questID + 1);
   };
 
+  const shuffle = (array: any[]) => {
+    let currentIndex = array.length,
+      randomIndex;
+
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+
+    return array;
+  };
+
   useEffect(() => {
     loadingState.setIsLoading(true);
 
     if (data) {
       const fetchedQuest = data.data;
+
       const filteredQuestByGameMode = fetchedQuest.filter(
         (quest: { category: string }) =>
           quest.category.toLowerCase() === game.gameMode.toLowerCase()
       );
 
       if (game.gameMode !== "MIX") {
-        const shuffled = filteredQuestByGameMode.sort(
-          () => 0.5 - Math.random()
-        );
-        setQuestions(shuffled);
+        const sortedQuestions = shuffle(filteredQuestByGameMode);
+        setQuestions(sortedQuestions);
         loadingState.setIsLoading(false);
       } else {
-        const shuffled = fetchedQuest.sort(() => 0.5 - Math.random());
-        setQuestions(shuffled);
+        const sortedQuestions = shuffle(fetchedQuest);
+        setQuestions(sortedQuestions);
         loadingState.setIsLoading(false);
       }
     }
@@ -114,85 +130,85 @@ export function GameView({
             display: "block",
           }}
         />
-      ) : null}
-
-      {questions.map(({ content, answers, _id, explanation, link }, id) => {
-        if (questID === id && questID < 10) {
-          setIds(_id);
-          if (answers[0].correct !== answer) {
-            setAnswer(answers[0].correct);
-          }
-          return (
-            <div key={id.toString()}>
-              <div className={styles.questionWrapper}>
-                <h1 className={styles.title}>Pytanie {id + 1}</h1>
-                <p className={styles.information}>{content}</p>
-                <Modal open={open} onClose={handleClose}>
-                  <Box
-                    sx={{
-                      position: "absolute" as "absolute",
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)",
-                      width: 400,
-                      bgcolor: "background.paper",
-                      border: "2px solid #000",
-                      boxShadow: 24,
-                      p: 4,
-                      textAlign: "center",
+      ) : (
+        questions.map(({ content, answers, _id, explanation, link }, id) => {
+          if (questID === id && questID < 10) {
+            setIds(_id);
+            if (answers[0].correct !== answer) {
+              setAnswer(answers[0].correct);
+            }
+            return (
+              <div key={id.toString()}>
+                <div className={styles.questionWrapper}>
+                  <h1 className={styles.title}>Pytanie {id + 1}</h1>
+                  <p className={styles.information}>{content}</p>
+                  <Modal open={open} onClose={handleClose}>
+                    <Box
+                      sx={{
+                        position: "absolute" as "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        width: 400,
+                        bgcolor: "background.paper",
+                        border: "2px solid #000",
+                        boxShadow: 24,
+                        p: 4,
+                        textAlign: "center",
+                      }}
+                    >
+                      <Typography
+                        sx={{
+                          marginBottom: 4,
+                        }}
+                        variant="h6"
+                        component="h2"
+                      >
+                        {explanation}
+                      </Typography>
+                      <Link
+                        sx={{
+                          textDecoration: "none",
+                          color: "text.primary",
+                          fontFamily: "Roboto",
+                        }}
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Czytaj więcej
+                      </Link>
+                    </Box>
+                  </Modal>
+                </div>
+                <div className={styles.buttons}>
+                  <button
+                    className={styles.buttonTrue}
+                    onClick={() => {
+                      handleOpen();
+                      handleClickTrue();
                     }}
                   >
-                    <Typography
-                      sx={{
-                        marginBottom: 4,
-                      }}
-                      variant="h6"
-                      component="h2"
-                    >
-                      {explanation}
-                    </Typography>
-                    <Link
-                      sx={{
-                        textDecoration: "none",
-                        color: "text.primary",
-                        fontFamily: "Roboto",
-                      }}
-                      href={link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Czytaj więcej
-                    </Link>
-                  </Box>
-                </Modal>
+                    Prawda
+                  </button>
+                  <button
+                    className={styles.buttonFalse}
+                    onClick={() => {
+                      handleOpen();
+                      handleClickFalse();
+                    }}
+                  >
+                    Fałsz
+                  </button>
+                </div>
               </div>
-              <div className={styles.buttons}>
-                <button
-                  className={styles.buttonTrue}
-                  onClick={() => {
-                    handleOpen();
-                    handleClickTrue();
-                  }}
-                >
-                  Prawda
-                </button>
-                <button
-                  className={styles.buttonFalse}
-                  onClick={() => {
-                    handleOpen();
-                    handleClickFalse();
-                  }}
-                >
-                  Fałsz
-                </button>
-              </div>
-            </div>
-          );
-        }
-        if (questID > 9) {
-          navigate(SCORE_PAGE);
-        }
-      })}
+            );
+          }
+          if (questID > 9) {
+            navigate(SCORE_PAGE);
+          }
+        })
+      )}
     </div>
   );
 }
