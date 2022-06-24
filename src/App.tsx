@@ -40,7 +40,9 @@ export const LoadingContext = createContext<LoadingContextType>({
 function App() {
   const [score, setScore] = useState<number>(0);
   const [gameMode, setGameMode] = useState<string>("POLITYKA");
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [questID, setQuestId] = useState<number>(0);
+  const [ids, setIds] = useState<number>(0);
 
   return (
     <div className={styles.App}>
@@ -50,9 +52,18 @@ function App() {
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<HomePage />} />
+
                 <Route
                   path={QUIZ_PAGE}
-                  element={<GameView score={score} setScore={setScore} />}
+                  element={
+                    <GameView
+                      score={score}
+                      setScore={setScore}
+                      questID={questID}
+                      setQuestId={setQuestId}
+                      setIds={setIds}
+                    />
+                  }
                 />
                 <Route path={GAME_MODE_PAGE} element={<GameMode />} />
                 <Route path={SCORE_PAGE} element={<GameOver score={score} />} />
