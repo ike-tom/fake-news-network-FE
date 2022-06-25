@@ -1,9 +1,12 @@
 # Fake News Network - CodersCamp 2021/22 Hackathon Hack-a-Troll
+
+**After Hackathon, I added new functionalities such as game modes, improved best scores and cleaned up the code - [Tomasz Ikert](https://github.com/ike-tom)**
+
+**The application is in Polish due to the large amount of fake news in the database.**
+
 ## I. Team
 
 The base of the project was created during 24h Hackathon Hack-a-Troll in Wrocław. The team worked as part of the [CodersCamp](https://coderscamp.pl/) course. The application was made by the course participants with the help of a mentor.
-
-**After Hackathon, I added new functionalities such as game modes, improved best scores and cleaned up the code - [Tomasz Ikert](https://github.com/ike-tom)**
 
 **Mentor**: [Filip Hałoń](https://github.com/FilipHalon)
 
