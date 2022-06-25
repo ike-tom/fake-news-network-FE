@@ -14,12 +14,21 @@ const Textarea: FC<TextareaAttributes> = (props) => {
     formState: { errors },
     register,
   } = useFormContext();
-    
+  console.log(errors[id]?.message);
+
   return (
     <>
       {label && <Label htmlFor={id}>{label}</Label>}
-      <textarea {...props} className={`${styles.textarea} ${errors[id] ? " validation-error" : ""}`} {...register(id)} />
-      {errors[id] && <ValidationMessage>{errors[id]["message"]}</ValidationMessage>}
+      <textarea
+        {...props}
+        className={`${styles.textarea} ${
+          errors[id] ? " validation-error" : ""
+        }`}
+        {...register(id)}
+      />
+      {errors[id] && (
+        <ValidationMessage>{"To pole jest wymagane"}</ValidationMessage>
+      )}
     </>
   );
 };

@@ -31,7 +31,7 @@ const Select: FC<SelectAttributes> = (props) => {
         ))}
       </select>
       {errors[id] && (
-        <ValidationMessage>{errors[id]["message"]}</ValidationMessage>
+        <ValidationMessage>{"To pole jest wymagane"}</ValidationMessage>
       )}
     </>
   );

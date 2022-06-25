@@ -24,7 +24,7 @@ const Input: FC<InputAttributes> = (props) => {
         {...register(id)}
       />
       {errors[id] && (
-        <ValidationMessage>{errors[id]["message"]}</ValidationMessage>
+        <ValidationMessage>{"To pole jest wymagane"}</ValidationMessage>
       )}
     </>
   );
