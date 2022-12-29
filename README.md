@@ -49,3 +49,13 @@ Then:
 npm run dev
 ```
 The application will be available at `localhost:3000`
+
+## VII. Illustrations
+Home Page
+![obraz](https://user-images.githubusercontent.com/80857044/210011106-f664fa3e-9df6-44c1-887d-b7ef4943979b.png)
+Mode selection
+![obraz](https://user-images.githubusercontent.com/80857044/210011268-5743309b-67ee-4edd-bb36-2d429c4383b0.png)
+Hall of Fame
+![obraz](https://user-images.githubusercontent.com/80857044/210011294-6b65058a-86e5-4d84-8265-dfc61610d6dd.png)
+Add question form
+![obraz](https://user-images.githubusercontent.com/80857044/210011172-7cf4070f-9bc9-4067-aa6b-2b7de4f6dc79.png)
